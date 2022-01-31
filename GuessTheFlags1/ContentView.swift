@@ -7,10 +7,11 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     
  
-    @State private var countires = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Polan", "Russia", "Spain", "UK", "USA"].shuffled()
+    @State private var countires = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Polan", "Russia", "Spain"].shuffled()
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var score = 0
@@ -39,8 +40,9 @@ struct ContentView: View {
                         self.flagTapped(number)
              //       }label:{
                     }){
-                        Image(self.countires[number])
-                       .renderingMode(.original)
+                        FlagImage(name: countires[number])
+                        
+                    
                        .clipShape(Capsule())
                        .overlay(Capsule().stroke(.black, lineWidth: 10))
                        .shadow(radius: 10)
